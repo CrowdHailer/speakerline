@@ -12,13 +12,14 @@ services:
       - 3000:3000
     volumes:
       - ./:/opt/app
-      - rails_tmp:/opt/app/tmp
     depends_on:
       - db
     environment:
       - RECAPTCHA_SITE_KEY=aaaaa
       - RAILS_ADMIN_USERNAME=rails
       - RAILS_ADMIN_PASSWORD=rails
+      - CLIENT_ID=test_0xKvM6N9
+      - CLIENT_SECRET=test_y2650o6pLoxNejD9
   db:
     image: postgres:11.2
     ports:

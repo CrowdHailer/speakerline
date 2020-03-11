@@ -64,7 +64,10 @@ GEM
       activerecord (>= 5.0, < 6.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    aes_key_wrap (1.0.1)
+    attr_required (1.0.1)
     backports (3.15.0)
+    bindata (2.4.6)
     bindex (0.8.1)
     builder (3.2.4)
     byebug (11.1.1)
@@ -124,6 +127,7 @@ GEM
     haml (5.1.2)
       temple (>= 0.8.0)
       tilt
+    httpclient (2.8.3)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     jquery-rails (4.3.5)
@@ -133,6 +137,10 @@ GEM
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
     json (2.3.0)
+    json-jwt (1.11.0)
+      activesupport (>= 4.2)
+      aes_key_wrap
+      bindata
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.1.1)
@@ -169,6 +177,16 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
+    openid_connect (1.1.8)
+      activemodel
+      attr_required (>= 1.0.0)
+      json-jwt (>= 1.5.0)
+      rack-oauth2 (>= 1.6.1)
+      swd (>= 1.0.0)
+      tzinfo
+      validate_email
+      validate_url
+      webfinger (>= 1.0.1)
     pg (1.2.2)
     public_suffix (4.0.2)
     puma (4.3.3)
@@ -176,6 +194,12 @@ GEM
     rack (2.0.8)
     rack-attack (6.2.2)
       rack (>= 1.0, < 3)
+    rack-oauth2 (1.10.1)
+      activesupport
+      attr_required
+      httpclient
+      json-jwt (>= 1.11.0)
+      rack
     rack-pjax (1.1.0)
       nokogiri (~> 1.5)
       rack (>= 1.1)
@@ -276,6 +300,10 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    swd (1.1.2)
+      activesupport (>= 3)
+      attr_required (>= 0.0.5)
+      httpclient (>= 2.4)
     temple (0.8.2)
     thor (1.0.1)
     thread_safe (0.3.6)
@@ -287,11 +315,20 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
+    validate_email (0.1.6)
+      activemodel (>= 3.0)
+      mail (>= 2.2.5)
+    validate_url (1.0.8)
+      activemodel (>= 3.0.0)
+      public_suffix
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webfinger (1.1.0)
+      activesupport
+      httpclient (>= 2.4)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
@@ -313,6 +350,7 @@ DEPENDENCIES
   faker
   jquery-rails
   listen
+  openid_connect (~> 1.1, >= 1.1.8)
   pg (= 1.2.2)
   puma
   rack-attack

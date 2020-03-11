@@ -14,6 +14,7 @@ gem 'rails_admin'
 gem 'redcarpet'
 gem 'erubis'
 gem 'rack-attack'
+gem 'openid_connect', '~> 1.1', '>= 1.1.8'
 
 group :development, :test do
   gem 'rspec-rails', '4.0.0.beta3'
@@ -38,4 +39,3 @@ group :test do
   gem 'rails-controller-testing'
   gem 'simplecov', require: false
 end
-
